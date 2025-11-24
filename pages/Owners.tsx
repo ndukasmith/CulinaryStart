@@ -113,7 +113,7 @@ export const Owners: React.FC = () => {
       <section className="bg-stone-900 text-white py-12 text-center">
          <h2 className="text-2xl font-bold mb-4">Have spare capacity?</h2>
          <Link to="/login">
-            <Button size="lg" className="bg-white text-stone-900 hover:bg-stone-200">List Your Kitchen</Button>
+            <Button size="lg">List Your Kitchen</Button>
          </Link>
       </section>
     </div>

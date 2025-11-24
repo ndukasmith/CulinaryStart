@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -19,41 +19,55 @@ import { Partners } from './pages/Partners';
 import { Careers } from './pages/Careers';
 import { Press } from './pages/Press';
 import { Sustainability } from './pages/Sustainability';
+import { Login } from './pages/Login';
+import { AccountSettings } from './pages/AccountSettings';
 import { User, UserRole } from './types';
-import { MOCK_USER } from './constants';
+import { MOCK_USER, MOCK_HOST_USER } from './constants';
 
 const App: React.FC = () => {
   // Global user state simulation
   const [user, setUser] = useState<User | null>(null);
 
-  // Helper to toggle user role for demo purposes
-  const toggleUserRole = () => {
-    if (!user) {
+  // Handle Login based on role selected in the Login Page
+  const handleLogin = (role: UserRole) => {
+    if (role === UserRole.ENTREPRENEUR) {
       setUser(MOCK_USER);
     } else {
-      setUser({
-        ...user,
-        role: user.role === UserRole.ENTREPRENEUR ? UserRole.OWNER : UserRole.ENTREPRENEUR
-      });
+      setUser(MOCK_HOST_USER);
     }
   };
 
-  // Simulate login simply by setting the mock user if not logged in
-  const handleLogin = () => {
-    if (!user) setUser(MOCK_USER);
+  const handleLogout = () => {
+    setUser(null);
+  };
+
+  // Helper to toggle role for demo purposes (still useful for dev)
+  const toggleUserRole = () => {
+    if (user) {
+      setUser(user.role === UserRole.ENTREPRENEUR ? MOCK_HOST_USER : MOCK_USER);
+    }
   };
 
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-stone-50 font-sans text-stone-900">
-        <Navbar user={user} toggleRole={toggleUserRole} />
+        <Navbar user={user} toggleRole={toggleUserRole} onLogout={handleLogout} />
         
         <main className="flex-grow animate-fadeIn">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/kitchen/:id" element={<ListingDetails />} />
-            <Route path="/dashboard" element={<Dashboard user={user || MOCK_USER} />} />
+            
+            {/* Login Route */}
+            <Route path="/login" element={
+              user ? <Navigate to="/dashboard" replace /> : <Login onLogin={handleLogin} />
+            } />
+            
+            {/* Protected Routes */}
+            <Route path="/dashboard" element={<Dashboard user={user} />} />
+            <Route path="/settings" element={user ? <AccountSettings user={user} /> : <Navigate to="/login" replace />} />
+            
             <Route path="/services" element={<Services />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/entrepreneurs" element={<Entrepreneurs />} />
@@ -67,21 +81,6 @@ const App: React.FC = () => {
             <Route path="/careers" element={<Careers />} />
             <Route path="/press" element={<Press />} />
             <Route path="/sustainability" element={<Sustainability />} />
-            
-            <Route path="/login" element={
-              <div className="flex items-center justify-center h-[60vh]">
-                <div className="text-center p-8 bg-white rounded-lg shadow-md">
-                  <h2 className="text-2xl font-bold mb-4">Login Simulation</h2>
-                  <p className="text-stone-500 mb-6">Click below to simulate logging in as a demo user.</p>
-                  <button 
-                    onClick={handleLogin} 
-                    className="bg-primary-700 text-white px-6 py-3 rounded hover:bg-primary-800 w-full"
-                  >
-                    Log in as Demo User
-                  </button>
-                </div>
-              </div>
-            } />
           </Routes>
         </main>
 

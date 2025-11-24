@@ -35,8 +35,9 @@ export const ListingDetails: React.FC = () => {
           alt={kitchen.title} 
           className="w-full h-full object-cover"
           onError={(e) => {
-            e.currentTarget.src = "https://placehold.co/1200x500?text=Kitchen+Image+Unavailable";
-            e.currentTarget.className = "w-full h-full object-cover opacity-50";
+            // Fallback to a generic industrial kitchen image if the specific one fails
+            e.currentTarget.src = "https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1200&q=80";
+            e.currentTarget.className = "w-full h-full object-cover opacity-90";
           }}
         />
         <div className="absolute top-4 left-4">

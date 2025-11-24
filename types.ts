@@ -8,6 +8,8 @@ export interface User {
   name: string;
   role: UserRole;
   avatar: string;
+  businessName?: string;
+  kvkNumber?: string;
 }
 
 export interface Amenity {
@@ -29,15 +31,21 @@ export interface Kitchen {
   amenities: string[];
   certifications: string[]; // HACCP, Organic
   type: string; // Commercial, Home, Ghost Kitchen
+  occupancyRate?: number;
+  status?: 'Active' | 'Inactive' | 'Maintenance';
 }
 
 export interface Booking {
   id: string;
   kitchenId: string;
   kitchenTitle: string;
-  date: string;
+  date: string; // ISO Date
+  time: string;
+  duration: number; // hours
   status: 'Confirmed' | 'Pending' | 'Completed' | 'Cancelled';
   amount: number;
+  entrepreneurName?: string;
+  entrepreneurBusiness?: string;
 }
 
 export interface Partner {
@@ -69,4 +77,24 @@ export interface FaqItem {
   question: string;
   answer: string;
   category: string;
+}
+
+export interface Notification {
+  id: string;
+  title: string;
+  message: string;
+  date: string;
+  read: boolean;
+  type: 'booking' | 'system' | 'compliance' | 'payment';
+}
+
+export interface ComplianceStatus {
+  haccpValidUntil: string;
+  nvwaRegistered: boolean;
+  hygieneCode: string;
+}
+
+export interface EarningsStats {
+  month: string;
+  amount: number;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ArrowRight, ShieldCheck, Users, TrendingUp, Star, Sparkles } from 'lucide-react';
+import { Search, ArrowRight, ShieldCheck, Users, TrendingUp, Star, Sparkles, PlusCircle } from 'lucide-react';
 import { Button } from '../components/Button';
 import { KitchenCard } from '../components/KitchenCard';
 import { KITCHENS } from '../constants';
@@ -21,27 +21,24 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-[650px] flex items-center justify-center text-center px-4">
+      <section className="relative h-[650px] flex items-center justify-center text-center px-4 overflow-hidden">
         {/* Background Image Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80" 
-            alt="Professional Kitchen" 
+            src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1920&q=80" 
+            alt="Chef in Professional Kitchen" 
             className="w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.src = "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1600&q=80"; // Fallback to kitchen interior
+            }}
           />
           <div className="absolute inset-0 bg-stone-900/60"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-white">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 leading-tight">
-            Flexibele, volledig uitgeruste keukens<br/> voor voedselondernemers in Nederland
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-10 leading-tight">
+            Flexible, Fully Equipped Kitchens<br/> for Food Entrepreneurs in the Netherlands
           </h1>
-          <p className="text-xl md:text-2xl text-stone-200 mb-2 font-light italic">
-            "Flexible, Fully Equipped Kitchens for Food Entrepreneurs in the Netherlands"
-          </p>
-          <p className="text-lg text-stone-300 mb-10 max-w-2xl mx-auto">
-            Betaalbare toegang tot professionele ruimtes, plus community, consultancy en groeihulpmiddelen.
-          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link to="/search">
@@ -51,7 +48,8 @@ export const Home: React.FC = () => {
               </Button>
             </Link>
             <Link to="/owners">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto min-w-[220px] bg-white text-stone-900 hover:bg-stone-100 h-14 text-lg">
+              <Button size="lg" className="w-full sm:w-auto min-w-[220px] gap-2 h-14 text-lg">
+                <PlusCircle size={22} />
                 List Your Kitchen
               </Button>
             </Link>

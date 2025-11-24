@@ -1,68 +1,91 @@
-import { Kitchen, Booking, Partner, UserRole, BlogPost, Event, FaqItem } from './types';
+import { Kitchen, Booking, Partner, UserRole, BlogPost, Event, FaqItem, Notification, ComplianceStatus, EarningsStats } from './types';
 
 export const MOCK_USER = {
   id: 'u1',
   name: 'Sanne de Vries',
   role: UserRole.ENTREPRENEUR,
-  avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80'
+  avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80',
+  businessName: 'Sanne\'s Vegan Treats',
+  kvkNumber: '12345678'
+};
+
+export const MOCK_HOST_USER = {
+  id: 'u2',
+  name: 'Marco Jansen',
+  role: UserRole.OWNER,
+  avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+  businessName: 'Jansen Catering BV',
+  kvkNumber: '87654321'
 };
 
 export const KITCHENS: Kitchen[] = [
   {
     id: 'k1',
     title: 'Professional Prep Kitchen in De Pijp',
-    description: 'Fully equipped commercial kitchen perfect for catering prep and small scale production. Includes convection ovens and spacious stainless steel worktops.',
+    description: 'Fully equipped commercial kitchen perfect for catering prep and small scale production. Includes convection ovens, spacious stainless steel worktops, and a walk-in fridge.',
     location: 'Amsterdam',
     pricePerHour: 90,
-    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1200&q=80',
+    // Image: Commercial kitchen, stainless steel, professional look
+    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Restaurant Het Zuiden',
     rating: 4.8,
     reviewCount: 24,
     amenities: ['Convection Oven', 'Walk-in Fridge', 'Loading Dock', 'Wifi'],
     certifications: ['HACCP Certified', 'NVWA Compliant'],
-    type: 'Commercial'
+    type: 'Commercial',
+    occupancyRate: 85,
+    status: 'Active'
   },
   {
     id: 'k2',
     title: 'Spacious Bakery Studio',
-    description: 'Specialized bakery setup with industrial mixers and proofing cabinets. Ideal for pastry chefs and bread makers.',
+    description: 'Specialized bakery setup with industrial mixers, dough sheeters, and proofing cabinets. Ideal for pastry chefs, bread makers, and chocolatiers.',
     location: 'Rotterdam',
     pricePerHour: 75,
-    imageUrl: 'https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?auto=format&fit=crop&w=1200&q=80',
+    // Image: Bakery style, ovens, bread/pastry focus, warm tones
+    imageUrl: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Bakkerij Jansen',
     rating: 4.9,
     reviewCount: 41,
     amenities: ['Industrial Mixer', 'Proofing Cabinet', 'Oven Deck'],
     certifications: ['HACCP Certified', 'Organic Certified'],
-    type: 'Commercial'
+    type: 'Commercial',
+    occupancyRate: 70,
+    status: 'Active'
   },
   {
     id: 'k3',
     title: 'Cozy Workshop Kitchen',
-    description: 'Open plan kitchen designed for teaching and workshops. Includes island setup and audio-visual equipment.',
+    description: 'Open plan kitchen designed for teaching and workshops. Includes island setup, audio-visual equipment, and seating for 12 students.',
     location: 'Utrecht',
     pricePerHour: 65,
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+    // Image: Cooking class, island setup, bright
+    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Kookstudio Utrecht',
     rating: 4.6,
     reviewCount: 18,
     amenities: ['Teaching Island', 'AV System', 'Dishwasher'],
     certifications: [],
-    type: 'Studio'
+    type: 'Studio',
+    occupancyRate: 45,
+    status: 'Active'
   },
   {
     id: 'k4',
     title: 'Ghost Kitchen Unit 4',
-    description: 'High-efficiency delivery-only kitchen unit. Optimized for Thuisbezorgd and UberEats operations.',
+    description: 'High-efficiency delivery-only kitchen unit. Optimized for Thuisbezorgd and UberEats operations with dedicated packing stations.',
     location: 'The Hague',
     pricePerHour: 55,
-    imageUrl: 'https://images.unsplash.com/photo-1588785392665-f6d4a541417d?auto=format&fit=crop&w=1200&q=80',
+    // Image: Industrial, stainless steel, focused on prep
+    imageUrl: 'https://images.unsplash.com/photo-1581553648680-45920b72f537?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Dark Kitchens NL',
     rating: 4.2,
     reviewCount: 8,
     amenities: ['Fryer', 'Grill', 'Packing Station'],
     certifications: ['HACCP Certified'],
-    type: 'Ghost Kitchen'
+    type: 'Ghost Kitchen',
+    occupancyRate: 92,
+    status: 'Maintenance'
   }
 ];
 
@@ -72,25 +95,45 @@ export const UPCOMING_BOOKINGS: Booking[] = [
     kitchenId: 'k1',
     kitchenTitle: 'Professional Prep Kitchen in De Pijp',
     date: '2023-10-24',
+    time: '08:00',
+    duration: 4,
     status: 'Confirmed',
-    amount: 360
+    amount: 360,
+    entrepreneurName: 'Sanne de Vries',
+    entrepreneurBusiness: 'Sanne\'s Vegan Treats'
   },
   {
     id: 'b2',
     kitchenId: 'k3',
     kitchenTitle: 'Cozy Workshop Kitchen',
     date: '2023-11-02',
+    time: '14:00',
+    duration: 3,
     status: 'Pending',
-    amount: 130
+    amount: 195,
+    entrepreneurName: 'Tom Bakker',
+    entrepreneurBusiness: 'Tom\'s Bread'
+  },
+  {
+    id: 'b3',
+    kitchenId: 'k2',
+    kitchenTitle: 'Spacious Bakery Studio',
+    date: '2023-11-10',
+    time: '06:00',
+    duration: 6,
+    status: 'Confirmed',
+    amount: 450,
+    entrepreneurName: 'Lisa Klein',
+    entrepreneurBusiness: 'Patisserie Klein'
   }
 ];
 
 export const PARTNERS: Partner[] = [
-  { name: 'Sligro', logoUrl: 'https://placehold.co/200x80?text=Sligro', description: 'Wholesale discounts for members.' },
-  { name: 'Thuisbezorgd.nl', logoUrl: 'https://placehold.co/200x80?text=Thuisbezorgd', description: 'Priority onboarding for delivery.' },
-  { name: 'Hotelschool The Hague', logoUrl: 'https://placehold.co/200x80?text=Hotelschool', description: 'Internship & staffing connections.' },
-  { name: 'KHN', logoUrl: 'https://placehold.co/200x80?text=KHN', description: 'Royal Dutch Hotel and Catering Association resources.' },
-  { name: 'KVK', logoUrl: 'https://placehold.co/200x80?text=KVK', description: 'Chamber of Commerce support.' },
+  { name: 'Sligro', logoUrl: 'https://placehold.co/200x80/e5e5e5/333333?text=Sligro', description: 'Wholesale discounts for members.' },
+  { name: 'Thuisbezorgd.nl', logoUrl: 'https://placehold.co/200x80/ff8000/ffffff?text=Thuisbezorgd', description: 'Priority onboarding for delivery.' },
+  { name: 'Hotelschool The Hague', logoUrl: 'https://placehold.co/200x80/003366/ffffff?text=Hotelschool', description: 'Internship & staffing connections.' },
+  { name: 'KHN', logoUrl: 'https://placehold.co/200x80/00aeef/ffffff?text=KHN', description: 'Royal Dutch Hotel and Catering Association resources.' },
+  { name: 'KVK', logoUrl: 'https://placehold.co/200x80/000000/ffffff?text=KVK', description: 'Chamber of Commerce support.' },
 ];
 
 export const DASHBOARD_STATS_OWNER = [
@@ -111,6 +154,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Jeroen Bakker',
     date: 'Oct 12, 2023',
     category: 'How-To Guides',
+    // Image: Delivery/Food prep context
     imageUrl: 'https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=600&q=80'
   },
   {
@@ -120,6 +164,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Lisa de Groot',
     date: 'Sep 28, 2023',
     category: 'Industry Trends',
+    // Image: Fresh vegetables/cooking
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80'
   },
   {
@@ -129,7 +174,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Karel Visser',
     date: 'Sep 15, 2023',
     category: 'Compliance',
-    imageUrl: 'https://images.unsplash.com/photo-1628191139360-4083564d03fd?auto=format&fit=crop&w=600&q=80'
+    // Image: Paperwork/Compliance/Office in kitchen
+    imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80'
   }
 ];
 
@@ -174,6 +220,39 @@ export const FAQS: FaqItem[] = [
   {
     category: 'Host Support',
     question: 'How do I get paid as a host?',
-    answer: ' payouts are processed weekly via bank transfer for completed bookings, minus our 15% commission.'
+    answer: 'Payouts are processed weekly via bank transfer for completed bookings, minus our 15% commission.'
   }
 ];
+
+export const NOTIFICATIONS: Notification[] = [
+  {
+    id: 'n1',
+    title: 'Booking Confirmed',
+    message: 'Your booking for Professional Prep Kitchen is confirmed for Oct 24.',
+    date: '2 hours ago',
+    read: false,
+    type: 'booking'
+  },
+  {
+    id: 'n2',
+    title: 'New Workshop Available',
+    message: 'Register for "HACCP for Small Businesses" before it fills up!',
+    date: '1 day ago',
+    read: true,
+    type: 'system'
+  },
+  {
+    id: 'n3',
+    title: 'Compliance Alert',
+    message: 'Your HACCP certificate is expiring in 30 days. Please renew.',
+    date: '3 days ago',
+    read: false,
+    type: 'compliance'
+  }
+];
+
+export const COMPLIANCE_STATUS: ComplianceStatus = {
+  haccpValidUntil: '2024-06-15',
+  nvwaRegistered: true,
+  hygieneCode: 'Catering Code - Certified'
+};
