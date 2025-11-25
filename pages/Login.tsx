@@ -36,11 +36,11 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=1920&q=80" 
-          alt="Kitchen Background" 
+          src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1920&q=80" 
+          alt="Industrial Kitchen Background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-stone-900/70 backdrop-blur-[2px]"></div>
       </div>
 
       <div className="relative z-10 w-full flex justify-center">

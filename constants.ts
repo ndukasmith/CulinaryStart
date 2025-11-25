@@ -25,8 +25,8 @@ export const KITCHENS: Kitchen[] = [
     description: 'Fully equipped commercial kitchen perfect for catering prep and small scale production. Includes convection ovens, spacious stainless steel worktops, and a walk-in fridge.',
     location: 'Amsterdam',
     pricePerHour: 90,
-    // Image: Commercial kitchen, stainless steel, professional look
-    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80',
+    // Image: Wide shot of industrial kitchen with stainless steel counters
+    imageUrl: 'https://images.unsplash.com/photo-1587241321921-91a834d6d191?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Restaurant Het Zuiden',
     rating: 4.8,
     reviewCount: 24,
@@ -42,8 +42,8 @@ export const KITCHENS: Kitchen[] = [
     description: 'Specialized bakery setup with industrial mixers, dough sheeters, and proofing cabinets. Ideal for pastry chefs, bread makers, and chocolatiers.',
     location: 'Rotterdam',
     pricePerHour: 75,
-    // Image: Bakery style, ovens, bread/pastry focus, warm tones
-    imageUrl: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1600&q=80',
+    // Image: Bakery specific, dough preparation
+    imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Bakkerij Jansen',
     rating: 4.9,
     reviewCount: 41,
@@ -59,8 +59,8 @@ export const KITCHENS: Kitchen[] = [
     description: 'Open plan kitchen designed for teaching and workshops. Includes island setup, audio-visual equipment, and seating for 12 students.',
     location: 'Utrecht',
     pricePerHour: 65,
-    // Image: Cooking class, island setup, bright
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80',
+    // Image: Bright, open kitchen suitable for teaching/workshops
+    imageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Kookstudio Utrecht',
     rating: 4.6,
     reviewCount: 18,
@@ -76,8 +76,8 @@ export const KITCHENS: Kitchen[] = [
     description: 'High-efficiency delivery-only kitchen unit. Optimized for Thuisbezorgd and UberEats operations with dedicated packing stations.',
     location: 'The Hague',
     pricePerHour: 55,
-    // Image: Industrial, stainless steel, focused on prep
-    imageUrl: 'https://images.unsplash.com/photo-1581553648680-45920b72f537?auto=format&fit=crop&w=1600&q=80',
+    // Image: Professional stainless steel prep station
+    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Dark Kitchens NL',
     rating: 4.2,
     reviewCount: 8,
@@ -154,7 +154,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Jeroen Bakker',
     date: 'Oct 12, 2023',
     category: 'How-To Guides',
-    // Image: Delivery/Food prep context
     imageUrl: 'https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=600&q=80'
   },
   {
@@ -164,7 +163,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Lisa de Groot',
     date: 'Sep 28, 2023',
     category: 'Industry Trends',
-    // Image: Fresh vegetables/cooking
     imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80'
   },
   {
@@ -174,7 +172,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Karel Visser',
     date: 'Sep 15, 2023',
     category: 'Compliance',
-    // Image: Paperwork/Compliance/Office in kitchen
     imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80'
   }
 ];
