@@ -136,7 +136,7 @@ export const Home: React.FC = () => {
           </p>
           <div className="flex justify-center gap-4">
             <Link to="/entrepreneurs">
-              <Button size="lg" className="bg-white text-stone-900 hover:bg-stone-200">
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10">
                 For Entrepreneurs
               </Button>
             </Link>

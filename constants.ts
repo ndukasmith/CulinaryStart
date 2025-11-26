@@ -25,8 +25,7 @@ export const KITCHENS: Kitchen[] = [
     description: 'Fully equipped commercial kitchen perfect for catering prep and small scale production. Includes convection ovens, spacious stainless steel worktops, and a walk-in fridge.',
     location: 'Amsterdam',
     pricePerHour: 90,
-    // Image: Wide shot of industrial kitchen with stainless steel counters
-    imageUrl: 'https://images.unsplash.com/photo-1587241321921-91a834d6d191?auto=format&fit=crop&w=1600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Restaurant Het Zuiden',
     rating: 4.8,
     reviewCount: 24,
@@ -42,7 +41,6 @@ export const KITCHENS: Kitchen[] = [
     description: 'Specialized bakery setup with industrial mixers, dough sheeters, and proofing cabinets. Ideal for pastry chefs, bread makers, and chocolatiers.',
     location: 'Rotterdam',
     pricePerHour: 75,
-    // Image: Bakery specific, dough preparation
     imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Bakkerij Jansen',
     rating: 4.9,
@@ -59,8 +57,7 @@ export const KITCHENS: Kitchen[] = [
     description: 'Open plan kitchen designed for teaching and workshops. Includes island setup, audio-visual equipment, and seating for 12 students.',
     location: 'Utrecht',
     pricePerHour: 65,
-    // Image: Bright, open kitchen suitable for teaching/workshops
-    imageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Kookstudio Utrecht',
     rating: 4.6,
     reviewCount: 18,
@@ -76,7 +73,6 @@ export const KITCHENS: Kitchen[] = [
     description: 'High-efficiency delivery-only kitchen unit. Optimized for Thuisbezorgd and UberEats operations with dedicated packing stations.',
     location: 'The Hague',
     pricePerHour: 55,
-    // Image: Professional stainless steel prep station
     imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1600&q=80',
     ownerName: 'Dark Kitchens NL',
     rating: 4.2,
@@ -89,12 +85,48 @@ export const KITCHENS: Kitchen[] = [
   }
 ];
 
+export const RECOMMENDED_KITCHENS: Kitchen[] = [
+  {
+    id: 'k5',
+    title: 'Rotterdam Pastry Lab',
+    description: 'Specialized pastry kitchen in Rotterdam center.',
+    location: 'Rotterdam',
+    pricePerHour: 80,
+    imageUrl: 'https://images.unsplash.com/photo-1627485937980-221c88ac04f9?auto=format&fit=crop&w=1600&q=80',
+    ownerName: 'Sweet Dreams',
+    rating: 4.9,
+    reviewCount: 12,
+    amenities: ['Oven Deck', 'Marble Tops'],
+    certifications: ['HACCP Certified'],
+    type: 'Commercial',
+    occupancyRate: 60,
+    status: 'Active'
+  },
+   {
+    id: 'k6',
+    title: 'Amsterdam East Prep',
+    description: 'Basic prep kitchen.',
+    location: 'Amsterdam',
+    pricePerHour: 60,
+    imageUrl: 'https://images.unsplash.com/photo-1581552805908-16cb6f743c39?auto=format&fit=crop&w=1600&q=80',
+    ownerName: 'East Side Foods',
+    rating: 4.5,
+    reviewCount: 8,
+    amenities: ['Prep Tables', 'Fridge'],
+    certifications: ['HACCP Certified'],
+    type: 'Commercial',
+    occupancyRate: 50,
+    status: 'Active'
+  }
+];
+
+
 export const UPCOMING_BOOKINGS: Booking[] = [
   {
     id: 'b1',
     kitchenId: 'k1',
     kitchenTitle: 'Professional Prep Kitchen in De Pijp',
-    date: '2023-10-24',
+    date: '2025-11-15',
     time: '08:00',
     duration: 4,
     status: 'Confirmed',
@@ -106,7 +138,7 @@ export const UPCOMING_BOOKINGS: Booking[] = [
     id: 'b2',
     kitchenId: 'k3',
     kitchenTitle: 'Cozy Workshop Kitchen',
-    date: '2023-11-02',
+    date: '2025-11-20',
     time: '14:00',
     duration: 3,
     status: 'Pending',
@@ -118,7 +150,7 @@ export const UPCOMING_BOOKINGS: Booking[] = [
     id: 'b3',
     kitchenId: 'k2',
     kitchenTitle: 'Spacious Bakery Studio',
-    date: '2023-11-10',
+    date: '2025-12-01',
     time: '06:00',
     duration: 6,
     status: 'Confirmed',
@@ -137,13 +169,12 @@ export const PARTNERS: Partner[] = [
 ];
 
 export const DASHBOARD_STATS_OWNER = [
-  { name: 'Mon', revenue: 400 },
-  { name: 'Tue', revenue: 300 },
-  { name: 'Wed', revenue: 200 },
-  { name: 'Thu', revenue: 278 },
-  { name: 'Fri', revenue: 589 },
-  { name: 'Sat', revenue: 839 },
-  { name: 'Sun', revenue: 680 },
+  { name: 'May', revenue: 1400 },
+  { name: 'Jun', revenue: 1600 },
+  { name: 'Jul', revenue: 1200 },
+  { name: 'Aug', revenue: 1800 },
+  { name: 'Sep', revenue: 1750 },
+  { name: 'Oct', revenue: 1800 },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -249,7 +280,7 @@ export const NOTIFICATIONS: Notification[] = [
 ];
 
 export const COMPLIANCE_STATUS: ComplianceStatus = {
-  haccpValidUntil: '2024-06-15',
+  haccpValidUntil: '2026-06-15',
   nvwaRegistered: true,
   hygieneCode: 'Catering Code - Certified'
 };
