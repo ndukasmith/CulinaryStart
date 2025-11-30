@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
         {/* Background Image Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?auto=format&fit=crop&w=1920&q=80" 
+            src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1920&q=80" 
             alt="Black Chef in Professional Kitchen" 
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -134,14 +134,16 @@ export const Home: React.FC = () => {
           <p className="text-stone-300 text-lg mb-8 max-w-2xl mx-auto">
             Whether you need a HACCP-certified prep kitchen for a day or a production facility for a month, CulinaryStart has the space for you.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/entrepreneurs">
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10">
+              <Button size="lg" className="w-full sm:w-auto min-w-[220px] gap-2 h-14 text-lg">
+                <Search size={22} />
                 For Entrepreneurs
               </Button>
             </Link>
             <Link to="/owners">
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10">
+              <Button size="lg" className="w-full sm:w-auto min-w-[220px] gap-2 h-14 text-lg">
+                <PlusCircle size={22} />
                 For Kitchen Owners
               </Button>
             </Link>
