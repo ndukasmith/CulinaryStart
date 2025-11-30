@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, TrendingUp, ShieldCheck, Users, ArrowRight } from 'lucide-react';
@@ -64,7 +65,7 @@ export const Entrepreneurs: React.FC = () => {
                      <h4 className="font-bold text-lg mb-1">Emma's Plant-Based Meals</h4>
                      <p className="text-stone-500 text-sm mb-4">Amsterdam • Monthly Renter</p>
                      <p className="text-stone-600 italic mb-4">"Started with 10 hours/week at CulinaryStart. Now serving 500+ customers/month via Thuisbezorgd.nl."</p>
-                     <a href="#" className="text-primary-700 font-bold text-sm">Read full story</a>
+                     <Link to="/success-stories/emma" className="text-primary-700 font-bold text-sm hover:underline">Read full story</Link>
                   </div>
                </div>
                <div className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
@@ -75,7 +76,7 @@ export const Entrepreneurs: React.FC = () => {
                      <h4 className="font-bold text-lg mb-1">Bakkerij De Toekomst</h4>
                      <p className="text-stone-500 text-sm mb-4">Rotterdam • Seasonal Renter</p>
                      <p className="text-stone-600 italic mb-4">"The industrial mixers available saved me from buying expensive equipment for my holiday rush."</p>
-                     <a href="#" className="text-primary-700 font-bold text-sm">Read full story</a>
+                     <Link to="/success-stories/bakkerij" className="text-primary-700 font-bold text-sm hover:underline">Read full story</Link>
                   </div>
                </div>
             </div>
