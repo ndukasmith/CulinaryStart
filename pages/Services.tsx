@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle, Users, BookOpen, ChevronRight } from 'lucide-react';
 import { Button } from '../components/Button';
+import { Link } from 'react-router-dom';
 
 export const Services: React.FC = () => {
   const services = [
@@ -8,19 +9,22 @@ export const Services: React.FC = () => {
       title: "Expert Consulting",
       icon: <CheckCircle className="w-12 h-12 text-primary-600" />,
       description: "Get help with Dutch food safety compliance, NVWA licensing, and HACCP implementation from certified experts.",
-      features: ["1-on-1 Consultation", "Site Inspection", "License Filing Assistance"]
+      features: ["1-on-1 Consultation", "Site Inspection", "License Filing Assistance"],
+      link: "/compliance"
     },
     {
       title: "Culinary Workshops",
       icon: <BookOpen className="w-12 h-12 text-primary-600" />,
       description: "Join workshops on sustainable cooking, plant-based recipe development, and delivery optimization.",
-      features: ["Monthly Schedule", "Guest Chefs", "Certification Included"]
+      features: ["Monthly Schedule", "Guest Chefs", "Certification Included"],
+      link: "/community"
     },
     {
       title: "Networking Events",
       icon: <Users className="w-12 h-12 text-primary-600" />,
       description: "Connect with local suppliers, investors, and other entrepreneurs via our partnerships with KHN and StartLife.",
-      features: ["Quarterly Meetups", "Supplier showcases", "Investor Pitch Nights"]
+      features: ["Quarterly Meetups", "Supplier showcases", "Investor Pitch Nights"],
+      link: "/community"
     }
   ];
 
@@ -36,12 +40,12 @@ export const Services: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+            <div key={idx} className="bg-white p-8 rounded-xl shadow-sm border border-stone-200 hover:shadow-md transition-shadow flex flex-col h-full">
               <div className="mb-6 bg-primary-50 w-20 h-20 rounded-full flex items-center justify-center">
                 {service.icon}
               </div>
               <h3 className="text-2xl font-bold text-stone-900 mb-4">{service.title}</h3>
-              <p className="text-stone-600 mb-6">{service.description}</p>
+              <p className="text-stone-600 mb-6 flex-grow">{service.description}</p>
               <ul className="space-y-3 mb-8">
                 {service.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex items-center text-stone-700">
@@ -50,10 +54,12 @@ export const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" fullWidth className="justify-between group">
-                Learn More 
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link to={service.link} className="mt-auto">
+                <Button variant="outline" fullWidth className="justify-between group">
+                  Learn More 
+                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           ))}
         </div>

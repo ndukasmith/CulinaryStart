@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { UserRole } from '../types';
 import { Button } from '../components/Button';
 import { ChefHat, Building, Check, Mail, Lock, AlertCircle } from 'lucide-react';
-import { MOCK_USER, MOCK_HOST_USER } from '../constants';
 
 interface LoginProps {
   onLogin: (role: UserRole) => void;
@@ -23,11 +22,6 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
     
     // Simulate Google Login
     setTimeout(() => {
-      // Mock Validation Logic: 
-      // If user tries to log in as Entrepreneur but mock data returns Owner (simulated here by checking role), show error.
-      // For demo, we just succeed based on the clicked button, BUT let's simulate a "Wrong Account" scenario if a specific flag was set.
-      // We'll just assume success for the demo flow.
-      
       onLogin(role);
       navigate('/dashboard');
     }, 1000);
@@ -48,23 +42,13 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <div className="relative min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1920&q=80" 
-          alt="Industrial Kitchen Background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-stone-900/70 backdrop-blur-[2px]"></div>
-      </div>
-
-      <div className="relative z-10 w-full max-w-6xl">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="w-full max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-white shadow-sm mb-4">
+          <h2 className="text-4xl font-serif font-bold text-stone-900 mb-4">
             Welcome to CulinaryStart
           </h2>
-          <p className="text-xl text-stone-200 shadow-sm max-w-2xl mx-auto">
+          <p className="text-xl text-stone-600 max-w-2xl mx-auto">
              Choose your role to access your personalized dashboard. / Kies je rol om toegang te krijgen tot je persoonlijke dashboard.
           </p>
         </div>
@@ -78,7 +62,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Entrepreneur Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border-2 border-transparent hover:border-primary-500 transition-all duration-300 flex flex-col">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-stone-200 hover:border-primary-500 transition-all duration-300 flex flex-col">
             <div className="p-8 flex-grow">
               <div className="flex items-center gap-4 mb-6">
                  <div className="bg-primary-50 p-4 rounded-full">
@@ -144,13 +128,13 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                  </form>
               )}
             </div>
-            <div className="bg-primary-50 p-4 text-center text-sm text-primary-800 font-medium">
+            <div className="bg-primary-50 p-4 text-center text-sm text-primary-800 font-medium border-t border-primary-100">
                New here? <a href="#" className="underline">Create an Entrepreneur Account</a>
             </div>
           </div>
 
           {/* Host Card */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border-2 border-transparent hover:border-sky-500 transition-all duration-300 flex flex-col">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-stone-200 hover:border-sky-500 transition-all duration-300 flex flex-col">
             <div className="p-8 flex-grow">
               <div className="flex items-center gap-4 mb-6">
                  <div className="bg-sky-50 p-4 rounded-full">
@@ -216,7 +200,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                  </form>
               )}
             </div>
-            <div className="bg-sky-50 p-4 text-center text-sm text-sky-800 font-medium">
+            <div className="bg-sky-50 p-4 text-center text-sm text-sky-800 font-medium border-t border-sky-100">
                Want to list your kitchen? <a href="#" className="underline">Create a Host Account</a>
             </div>
           </div>

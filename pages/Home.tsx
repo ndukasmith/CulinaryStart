@@ -25,8 +25,8 @@ export const Home: React.FC = () => {
         {/* Background Image Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=1920&q=80" 
-            alt="Chef in Professional Kitchen" 
+            src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?auto=format&fit=crop&w=1920&q=80" 
+            alt="Black Chef in Professional Kitchen" 
             className="w-full h-full object-cover"
             onError={(e) => {
               e.currentTarget.src = "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1600&q=80"; // Fallback to kitchen interior

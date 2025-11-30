@@ -7,7 +7,7 @@ import { KITCHENS } from '../constants';
 export const Search: React.FC = () => {
   const [location, setLocation] = useState('');
   const [kitchenType, setKitchenType] = useState('All');
-  const [priceRange, setPriceRange] = useState<number>(100);
+  const [priceRange, setPriceRange] = useState<number>(200);
   const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
 
   // Simple client-side filtering
@@ -17,6 +17,12 @@ export const Search: React.FC = () => {
     const matchesPrice = k.pricePerHour <= priceRange;
     return matchesLocation && matchesType && matchesPrice;
   });
+
+  const handleReset = () => {
+    setLocation('');
+    setKitchenType('All');
+    setPriceRange(200);
+  };
 
   return (
     <div className="min-h-screen bg-stone-50 pt-6 pb-16">
@@ -28,7 +34,7 @@ export const Search: React.FC = () => {
              <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-bold text-stone-900">Filters</h3>
-                  <button className="text-xs text-primary-700 hover:underline">Reset</button>
+                  <button onClick={handleReset} className="text-xs text-primary-700 hover:underline cursor-pointer">Reset</button>
                 </div>
                 
                 {/* Location */}
@@ -54,7 +60,12 @@ export const Search: React.FC = () => {
                    <div className="space-y-2">
                      {['Commercial', 'Ghost Kitchen', 'Studio', 'Catering', 'Bakery'].map(type => (
                        <label key={type} className="flex items-center">
-                         <input type="checkbox" className="rounded border-stone-300 text-primary-600 focus:ring-primary-500" />
+                         <input 
+                            type="checkbox" 
+                            checked={kitchenType === type}
+                            onChange={() => setKitchenType(kitchenType === type ? 'All' : type)}
+                            className="rounded border-stone-300 text-primary-600 focus:ring-primary-500" 
+                          />
                          <span className="ml-2 text-sm text-stone-600">{type}</span>
                        </label>
                      ))}
@@ -168,7 +179,8 @@ export const Search: React.FC = () => {
                   <div className="text-center py-20 bg-white rounded-lg border border-stone-200">
                     <SearchIcon size={48} className="mx-auto text-stone-300 mb-4" />
                     <h3 className="text-lg font-medium text-stone-900">No kitchens found</h3>
-                    <p className="text-stone-500">Try adjusting your search filters.</p>
+                    <p className="text-stone-500 mb-4">Try adjusting your search filters.</p>
+                    <Button onClick={handleReset} variant="outline" size="sm">Clear All Filters</Button>
                   </div>
                 )}
               </>

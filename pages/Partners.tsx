@@ -62,7 +62,7 @@ export const Partners: React.FC = () => {
               <p className="text-stone-300 mb-6">
                  Sponsor our next "Amsterdam Food Entrepreneur Mixer" or host a specialized workshop. Reach 150+ engaged local makers.
               </p>
-              <Button className="bg-white text-stone-900 hover:bg-stone-100 border-none">Become a Sponsor</Button>
+              <Button onClick={() => window.location.href = 'mailto:sponsors@culinarystart.nl'} className="bg-white text-stone-900 hover:bg-stone-100 border-none">Become a Sponsor</Button>
            </div>
 
            <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm">
@@ -71,7 +71,7 @@ export const Partners: React.FC = () => {
               <p className="text-stone-600 mb-6">
                  Earn 10% commission for referring new hosts or entrepreneurs to CulinaryStart. Free to join.
               </p>
-              <Button variant="outline">Join Affiliate Program</Button>
+              <Button onClick={() => alert('Application form coming soon! Contact support for early access.')} variant="outline">Join Affiliate Program</Button>
            </div>
         </div>
 

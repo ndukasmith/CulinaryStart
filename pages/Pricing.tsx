@@ -77,7 +77,7 @@ export const Pricing: React.FC = () => {
                     <li className="flex gap-2"><Check size={18} className="text-emerald-400"/> Free access to 2 workshops/year</li>
                     <li className="flex gap-2"><Check size={18} className="text-emerald-400"/> Quarterly consulting session</li>
                  </ul>
-                 <Button className="bg-white text-stone-900 hover:bg-stone-200">Join Pro</Button>
+                 <Button variant="primary" fullWidth>Join Pro</Button>
               </div>
               <div className="border-t md:border-t-0 md:border-l border-stone-700 pt-8 md:pt-0 md:pl-12">
                  <h2 className="text-2xl font-serif font-bold mb-4">Host Premium</h2>
@@ -88,7 +88,7 @@ export const Pricing: React.FC = () => {
                     <li className="flex gap-2"><Check size={18} className="text-emerald-400"/> Top-of-search visibility</li>
                     <li className="flex gap-2"><Check size={18} className="text-emerald-400"/> Advanced analytics dashboard</li>
                  </ul>
-                 <Button className="bg-white text-stone-900 hover:bg-stone-200">Upgrade Listing</Button>
+                 <Button variant="primary" fullWidth>Upgrade Listing</Button>
               </div>
            </div>
         </div>

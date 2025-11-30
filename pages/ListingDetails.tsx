@@ -26,6 +26,10 @@ export const ListingDetails: React.FC = () => {
     alert(`Booking Request Sent for ${bookingDate}!\n\nThe owner (${kitchen.ownerName}) will review your request shortly.`);
   };
 
+  const handleInquire = () => {
+    alert(`Inquiry sent to ${kitchen.ownerName}. Check your email for their response within 24 hours.`);
+  };
+
   return (
     <div className="bg-white min-h-screen pb-16">
       {/* Image Gallery Placeholder */}
@@ -237,7 +241,7 @@ export const ListingDetails: React.FC = () => {
                 <Button type="submit" fullWidth size="lg">
                   Reserve Now
                 </Button>
-                <Button type="button" variant="outline" fullWidth size="sm">
+                <Button type="button" onClick={handleInquire} variant="outline" fullWidth size="sm">
                   Inquire
                 </Button>
                 
