@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Quote, ChefHat, TrendingUp } from 'lucide-react';
+import { Quote, ChefHat, TrendingUp } from 'lucide-react';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 
 // Mock Data for the stories
 const STORIES: Record<string, any> = {
@@ -85,12 +86,8 @@ export const SuccessStory: React.FC = () => {
       <div className="h-[400px] w-full relative">
         <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-stone-900/50"></div>
-        <div className="absolute top-8 left-4 sm:left-8">
-           <Link to="/entrepreneurs">
-              <Button variant="outline" className="text-white border-white hover:bg-white/20 gap-2">
-                 <ArrowLeft size={16} /> Back to Stories
-              </Button>
-           </Link>
+        <div className="absolute top-8 left-4 sm:left-8 z-10">
+           <BackButton to="/entrepreneurs" label="Back to Stories" variant="dark" />
         </div>
         <div className="absolute bottom-0 left-0 w-full p-8 sm:p-12 bg-gradient-to-t from-stone-900 to-transparent">
            <div className="max-w-4xl mx-auto">

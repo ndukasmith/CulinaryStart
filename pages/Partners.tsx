@@ -2,12 +2,13 @@ import React from 'react';
 import { PARTNERS } from '../constants';
 import { Button } from '../components/Button';
 import { Search, Handshake, Users, ArrowUpRight } from 'lucide-react';
+import { BackButton } from '../components/BackButton';
 
 export const Partners: React.FC = () => {
   return (
-    <div className="min-h-screen bg-stone-50 py-12">
+    <div className="min-h-screen bg-stone-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+        <BackButton />
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-serif font-bold text-stone-900 mb-4">Our Partners</h1>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { BLOG_POSTS } from '../constants';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 
 export const Blog: React.FC = () => {
   return (
-    <div className="min-h-screen bg-stone-50 py-12">
+    <div className="min-h-screen bg-stone-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+        <BackButton />
         <div className="text-center mb-12">
           <h1 className="text-4xl font-serif font-bold text-stone-900 mb-4">Industry Insights</h1>
           <p className="text-xl text-stone-600 max-w-2xl mx-auto">

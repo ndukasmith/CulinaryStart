@@ -2,12 +2,16 @@ import React from 'react';
 import { Leaf, Recycle, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
+import { BackButton } from '../components/BackButton';
 
 export const Sustainability: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-       <div className="bg-emerald-900 text-white py-20 text-center">
-          <div className="max-w-3xl mx-auto px-4">
+       <div className="bg-emerald-900 text-white py-20 text-center relative">
+          <div className="absolute top-4 left-4 sm:left-8 z-10">
+             <BackButton variant="dark" />
+          </div>
+          <div className="max-w-3xl mx-auto px-4 relative z-0">
              <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Our Commitment to a Greener Future</h1>
              <p className="text-xl text-emerald-100">
                 We believe sharing resources is the first step towards a sustainable food system.

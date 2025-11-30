@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { User, UserRole } from '../types';
 import { Button } from '../components/Button';
-import { User as UserIcon, Building, CreditCard, Bell, Shield, Save } from 'lucide-react';
+import { User as UserIcon, CreditCard, Bell, Shield, Save } from 'lucide-react';
+import { BackButton } from '../components/BackButton';
 
 interface AccountSettingsProps {
   user: User;
@@ -13,6 +14,7 @@ export const AccountSettings: React.FC<AccountSettingsProps> = ({ user }) => {
   return (
     <div className="min-h-screen bg-stone-50 py-8">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <BackButton to="/dashboard" label="Back to Dashboard" />
         <h1 className="text-3xl font-serif font-bold text-stone-900 mb-8">Account Settings / Instellingen</h1>
 
         <div className="flex flex-col md:flex-row gap-8">

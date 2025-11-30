@@ -2,12 +2,13 @@ import React from 'react';
 import { MessageSquare, Calendar, Users, Heart } from 'lucide-react';
 import { EVENTS } from '../constants';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 
 export const Community: React.FC = () => {
   return (
-    <div className="min-h-screen bg-stone-50 py-12">
+    <div className="min-h-screen bg-stone-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+        <BackButton />
         <div className="text-center mb-12">
           <h1 className="text-4xl font-serif font-bold text-stone-900 mb-4">CulinaryStart Community</h1>
           <p className="text-xl text-stone-600">Connect, collaborate, and grow with fellow Dutch food entrepreneurs.</p>

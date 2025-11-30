@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserRole } from '../types';
 import { Button } from '../components/Button';
 import { ChefHat, Building, Check, Mail, Lock, AlertCircle } from 'lucide-react';
+import { BackButton } from '../components/BackButton';
 
 interface LoginProps {
   onLogin: (role: UserRole) => void;
@@ -42,8 +43,12 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="w-full max-w-6xl">
+    <div className="min-h-[calc(100vh-64px)] py-12 px-4 sm:px-6 lg:px-8 bg-white relative">
+      <div className="max-w-7xl mx-auto mb-6">
+         <BackButton to="/" label="Back to Home" />
+      </div>
+
+      <div className="w-full max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-serif font-bold text-stone-900 mb-4">
             Welcome to CulinaryStart

@@ -1,11 +1,13 @@
 import React from 'react';
 import { FileText, Download, ExternalLink, AlertTriangle } from 'lucide-react';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 
 export const Compliance: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white py-12">
+    <div className="min-h-screen bg-white py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <BackButton />
         
         <div className="mb-12">
           <h1 className="text-3xl font-serif font-bold text-stone-900 mb-4">Legal & Compliance Center</h1>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import { Briefcase, Heart, Coffee } from 'lucide-react';
+import { BackButton } from '../components/BackButton';
 
 export const Careers: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white py-12">
+    <div className="min-h-screen bg-white py-8">
        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+          <BackButton />
           <div className="text-center mb-16">
              <h1 className="text-4xl font-serif font-bold text-stone-900 mb-4">Join the CulinaryStart Team</h1>
              <p className="text-xl text-stone-600">

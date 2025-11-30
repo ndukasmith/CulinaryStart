@@ -1,11 +1,13 @@
 import React from 'react';
 import { Download, Mail } from 'lucide-react';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 
 export const Press: React.FC = () => {
   return (
-    <div className="min-h-screen bg-stone-50 py-12">
+    <div className="min-h-screen bg-stone-50 py-8">
        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <BackButton />
           <h1 className="text-4xl font-serif font-bold text-stone-900 mb-8">Press Room</h1>
           
           <div className="bg-white p-8 rounded-xl shadow-sm border border-stone-200 mb-12">

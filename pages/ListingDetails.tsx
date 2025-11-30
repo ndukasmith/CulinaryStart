@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { MapPin, Star, Check, Shield, Info, Calendar, Clock, DollarSign, User } from 'lucide-react';
 import { KITCHENS } from '../constants';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 
 export const ListingDetails: React.FC = () => {
   const { id } = useParams();
@@ -44,10 +45,8 @@ export const ListingDetails: React.FC = () => {
             e.currentTarget.className = "w-full h-full object-cover opacity-90";
           }}
         />
-        <div className="absolute top-4 left-4">
-          <Link to="/search">
-            <Button variant="secondary" size="sm" className="shadow-lg">&larr; Back to Search</Button>
-          </Link>
+        <div className="absolute top-4 left-4 z-10">
+          <BackButton to="/search" label="Back to Search" variant="dark" />
         </div>
       </div>
 
