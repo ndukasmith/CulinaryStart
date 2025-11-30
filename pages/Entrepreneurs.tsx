@@ -99,7 +99,7 @@ export const Entrepreneurs: React.FC = () => {
       <section className="bg-stone-900 text-white py-12 text-center">
          <h2 className="text-2xl font-bold mb-4">Ready to cook?</h2>
          <Link to="/search">
-            <Button size="lg" className="bg-white text-stone-900 hover:bg-stone-200">Browse Kitchens</Button>
+            <Button size="lg" className="gap-2">Browse Kitchens <ArrowRight size={20} /></Button>
          </Link>
       </section>
     </div>
