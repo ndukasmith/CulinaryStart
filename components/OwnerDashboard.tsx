@@ -135,7 +135,7 @@ export const OwnerDashboard: React.FC<DashboardProps> = ({ user }) => {
                         <p className="text-xs text-stone-500 mt-1">Due 15/11/2025</p>
                      </div>
                   </div>
-                  <div className="h-64 w-full">
+                  <div className="h-64 w-full min-w-0">
                      <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={DASHBOARD_STATS_OWNER}>
                            <CartesianGrid strokeDasharray="3 3" vertical={false} />
