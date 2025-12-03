@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/support" className="hover:text-white transition-colors">Help Center & FAQ</Link></li>
               <li><Link to="/compliance" className="hover:text-white transition-colors">Legal & Compliance</Link></li>
               <li><Link to="/compliance" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link to="/compliance" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
             </ul>
             <div className="mt-6">
                <h5 className="text-xs font-bold text-stone-500 mb-2">Subscribe to our Newsletter</h5>
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
             <p>GDPR Compliant | KVK Number: 12345678 | VAT: NL87654321B01</p>
           </div>
           <div className="flex items-center gap-4">
-             <Link to="/compliance" className="hover:text-stone-300">Cookie Policy</Link>
+             <Link to="/privacy" className="hover:text-stone-300">Cookie Policy</Link>
              <span>Amsterdam, NL</span>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -23,6 +22,7 @@ import { Sustainability } from './pages/Sustainability';
 import { Login } from './pages/Login';
 import { AccountSettings } from './pages/AccountSettings';
 import { SuccessStory } from './pages/SuccessStory';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { User, UserRole } from './types';
 import { MOCK_USER, MOCK_HOST_USER } from './constants';
 
@@ -72,6 +72,7 @@ const App: React.FC = () => {
             
             <Route path="/services" element={<Services />} />
             <Route path="/compliance" element={<Compliance />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/entrepreneurs" element={<Entrepreneurs />} />
             <Route path="/success-stories/:id" element={<SuccessStory />} />
             <Route path="/owners" element={<Owners />} />
