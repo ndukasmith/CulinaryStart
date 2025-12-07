@@ -33,7 +33,7 @@ export const Support: React.FC = () => {
               <Phone className="mx-auto text-primary-600 mb-3" size={32} />
               <h3 className="font-bold mb-1">Phone</h3>
               <p className="text-stone-500 text-sm mb-4">Mon-Fri, 9am - 5pm CET</p>
-              <a href="tel:+31201234567" className="text-primary-700 font-bold text-sm hover:underline">+31 (0) 20 123 4567</a>
+              <a href="tel:+31680218178" className="text-primary-700 font-bold text-sm hover:underline">+31 6 80218178</a>
            </div>
         </div>
 

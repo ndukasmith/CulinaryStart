@@ -264,7 +264,7 @@ export const PrivacyPolicy: React.FC = () => {
               <p><strong>CulinaryStart B.V.</strong></p>
               <p>[Insert Company Address]</p>
               <p><strong>Email:</strong> <a href="mailto:support@culinarystart.nl" className="text-primary-700 underline">support@culinarystart.nl</a></p>
-              <p><strong>Phone:</strong> [Insert Phone Number]</p>
+              <p><strong>Phone:</strong> +31 6 80218178</p>
               <p><strong>KVK Number:</strong> [Insert KVK Number]</p>
               <p><strong>VAT Number:</strong> [Insert VAT Number]</p>
             </div>

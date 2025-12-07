@@ -23,6 +23,7 @@ import { Login } from './pages/Login';
 import { AccountSettings } from './pages/AccountSettings';
 import { SuccessStory } from './pages/SuccessStory';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 import { User, UserRole } from './types';
 import { MOCK_USER, MOCK_HOST_USER } from './constants';
 
@@ -73,6 +74,7 @@ const App: React.FC = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
             <Route path="/entrepreneurs" element={<Entrepreneurs />} />
             <Route path="/success-stories/:id" element={<SuccessStory />} />
             <Route path="/owners" element={<Owners />} />
