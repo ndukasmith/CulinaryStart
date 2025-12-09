@@ -22,7 +22,7 @@ export const About: React.FC = () => {
                 CulinaryStart was born from a pivotal observation: while the Netherlands boasts incredible food talent, the financial and logistical barriers to entry, particularly the high cost of securing commercial kitchen space, were too prohibitive for aspiring entrepreneurs.
              </p>
              <p className="mb-6">
-                I was driven by a passion for cooking and a belief in the strength of community, used extensive experience gained in the oil and gas industry—including engineering, project management, and data analysis—along with an MBA earned in the Netherlands, to develop a scalable solution. The journey was fueled by a desire to empower entrepreneurs and address the constraints hindering their growth.
+                We were driven by a passion for cooking and a belief in the strength of community, used extensive experience gained in the oil and gas industry—including engineering, project management, and data analysis—along with an MBA earned in the Netherlands, to develop a scalable solution. The journey was fueled by a desire to empower entrepreneurs and address the constraints hindering their growth.
              </p>
              <p className="mb-6">
                 We pioneered an Airbnb-like platform to harness the potential of underutilized kitchen spaces by crowd-sourcing usable kitchens in public buildings, homes, and other non-traditional locations. This innovative model creates a powerful "win-win situation": kitchen owners monetize their idle assets (like a bakery closed in the afternoon or a restaurant during off-peak hours) while food entrepreneurs gain essential professional infrastructure at a fraction of the traditional cost.
