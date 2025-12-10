@@ -23,13 +23,14 @@ export const Team: React.FC = () => {
           
           {/* Card 1: Nduka Odim */}
           <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-stone-200 flex flex-col h-full hover:shadow-md transition-shadow">
-            <div className="h-64 overflow-hidden bg-stone-200 relative">
+            <div className="h-80 overflow-hidden bg-stone-200 relative">
               <img 
-                src="/IMG_20251203_104009.jpg" 
-                alt="Nduka Odim" 
-                className="w-full h-full object-cover object-center"
+                src="/mypictures/IMG_20251203_104009.jpg" 
+                alt="Nduka Odim (Founder & CEO of CulinaryStart)"
+                className="w-full h-full object-cover object-top"
                 onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/400x400/e5e5e5/16a34a?text=Nduka";
+                  e.currentTarget.onerror = null; 
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80";
                 }}
               />
             </div>
