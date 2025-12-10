@@ -15,6 +15,7 @@ import { Community } from './pages/Community';
 import { Support } from './pages/Support';
 import { Blog } from './pages/Blog';
 import { About } from './pages/About';
+import { Team } from './pages/Team';
 import { Partners } from './pages/Partners';
 import { Careers } from './pages/Careers';
 import { Press } from './pages/Press';
@@ -83,6 +84,7 @@ const App: React.FC = () => {
             <Route path="/support" element={<Support />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
+            <Route path="/team" element={<Team />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/press" element={<Press />} />
