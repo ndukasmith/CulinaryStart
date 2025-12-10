@@ -28,10 +28,6 @@ export const Team: React.FC = () => {
                 src="/mypictures/IMG_20251203_104009.jpg" 
                 alt="Nduka Odim (Founder & CEO of CulinaryStart)"
                 className="w-full h-full object-cover object-top"
-                onError={(e) => {
-                  e.currentTarget.onerror = null; 
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80";
-                }}
               />
             </div>
             <div className="p-6 flex flex-col flex-grow">
