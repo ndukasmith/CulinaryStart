@@ -11,14 +11,14 @@ export const Services: React.FC = () => {
       icon: <CheckCircle className="w-12 h-12 text-primary-600" />,
       description: "Get help with Dutch food safety compliance, NVWA licensing, and HACCP implementation from certified experts.",
       features: ["1-on-1 Consultation", "Site Inspection", "License Filing Assistance"],
-      link: "/compliance"
+      link: "/compliance-consulting"
     },
     {
       title: "Culinary Workshops",
       icon: <BookOpen className="w-12 h-12 text-primary-600" />,
       description: "Join workshops on sustainable cooking, plant-based recipe development, and delivery optimization.",
       features: ["Monthly Schedule", "Guest Chefs", "Certification Included"],
-      link: "/community"
+      link: "/culinary-workshops"
     },
     {
       title: "Networking Events",

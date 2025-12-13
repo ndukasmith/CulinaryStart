@@ -8,6 +8,8 @@ import { ListingDetails } from './pages/ListingDetails';
 import { Dashboard } from './pages/Dashboard';
 import { Services } from './pages/Services';
 import { Compliance } from './pages/Compliance';
+import { ComplianceConsulting } from './pages/ComplianceConsulting';
+import { CulinaryWorkshops } from './pages/CulinaryWorkshops';
 import { Entrepreneurs } from './pages/Entrepreneurs';
 import { Owners } from './pages/Owners';
 import { Pricing } from './pages/Pricing';
@@ -74,6 +76,8 @@ const App: React.FC = () => {
             
             <Route path="/services" element={<Services />} />
             <Route path="/compliance" element={<Compliance />} />
+            <Route path="/compliance-consulting" element={<ComplianceConsulting />} />
+            <Route path="/culinary-workshops" element={<CulinaryWorkshops />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/entrepreneurs" element={<Entrepreneurs />} />
