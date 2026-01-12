@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, Star, Check, Shield, Info, Calendar, Clock, DollarSign, User } from 'lucide-react';
+import { MapPin, Star, Check, Shield, Info, Calendar, Clock, DollarSign, User, AlertCircle, Trash2 } from 'lucide-react';
 import { KITCHENS } from '../constants';
 import { Button } from '../components/Button';
 import { BackButton } from '../components/BackButton';
@@ -40,7 +41,6 @@ export const ListingDetails: React.FC = () => {
           alt={kitchen.title} 
           className="w-full h-full object-cover"
           onError={(e) => {
-            // Fallback to a highly reliable placeholder image
             e.currentTarget.src = "https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1200&q=80";
             e.currentTarget.className = "w-full h-full object-cover opacity-90";
           }}
@@ -111,7 +111,6 @@ export const ListingDetails: React.FC = () => {
                         {item}
                       </div>
                     ))}
-                    {/* Mock extra items */}
                     <div className="flex items-center text-stone-600"><Check className="w-5 h-5 text-primary-600 mr-3" />Free Parking</div>
                     <div className="flex items-center text-stone-600"><Check className="w-5 h-5 text-primary-600 mr-3" />Loading Dock</div>
                     <div className="flex items-center text-stone-600"><Check className="w-5 h-5 text-primary-600 mr-3" />24/7 Access</div>
@@ -137,18 +136,48 @@ export const ListingDetails: React.FC = () => {
             )}
 
             {activeTab === 'rules' && (
-               <div className="space-y-6">
-                 <h3 className="text-xl font-bold text-stone-900">House Rules</h3>
-                 <ul className="list-disc pl-5 space-y-2 text-stone-600">
-                    <li>Must possess valid HACCP certification.</li>
-                    <li>Clean up all stations before checking out (Check-out checklist provided).</li>
-                    <li>No smoking inside the premises.</li>
-                    <li>Dispose of waste in designated bins (Organic vs General).</li>
-                    <li>Report any equipment damage immediately.</li>
-                 </ul>
-                 <div className="bg-amber-50 p-4 rounded-md border border-amber-200">
-                    <h4 className="font-bold text-amber-800 text-sm mb-1">Cancellation Policy</h4>
-                    <p className="text-amber-700 text-sm">Full refund if canceled 48 hours before booking. 50% refund if canceled 24-48 hours before.</p>
+               <div className="space-y-6 animate-fadeIn">
+                 <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-stone-900">Mandatory House Rules</h3>
+                    <Link to="/terms" className="text-xs font-bold text-primary-700 hover:underline uppercase tracking-widest">View Full Terms</Link>
+                 </div>
+                 
+                 <div className="bg-amber-50 p-5 rounded-xl border border-amber-200 flex gap-4">
+                    <AlertCircle className="text-amber-600 flex-shrink-0" />
+                    <div>
+                       <h4 className="font-bold text-amber-900 text-sm mb-1">Strict Cleaning Requirement</h4>
+                       <p className="text-amber-800 text-xs">This kitchen follows the "Broom-Clean" standard. Any mess left behind will incur an automatic cleaning fee of up to €150.</p>
+                    </div>
+                 </div>
+
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                       <h4 className="font-bold text-stone-900 flex items-center gap-2">
+                          <Trash2 size={18} className="text-primary-600"/> Cleanliness
+                       </h4>
+                       <ul className="list-disc pl-5 space-y-2 text-sm text-stone-600">
+                          <li>Sanitize all workstations before checkout.</li>
+                          <li>Wash and store all used equipment.</li>
+                          <li>Sort waste: GFT (Organic), PMD (Recycling), General.</li>
+                          <li>Label all stored food items (Name, Date, Content).</li>
+                       </ul>
+                    </div>
+                    <div className="space-y-4">
+                       <h4 className="font-bold text-stone-900 flex items-center gap-2">
+                          <Shield size={18} className="text-primary-600"/> Conduct & Safety
+                       </h4>
+                       <ul className="list-disc pl-5 space-y-2 text-sm text-stone-600">
+                          <li>Must possess valid HACCP certification.</li>
+                          <li>No smoking or unauthorized guests.</li>
+                          <li>Report any equipment breakage within 60 mins.</li>
+                          <li>Return keys/access cards to designated spot.</li>
+                       </ul>
+                    </div>
+                 </div>
+
+                 <div className="p-4 bg-stone-50 rounded-md border border-stone-200">
+                    <h4 className="font-bold text-stone-800 text-sm mb-1">Cancellation Policy</h4>
+                    <p className="text-stone-700 text-sm">Full refund if canceled 48 hours before booking. 50% refund if canceled 24-48 hours before.</p>
                  </div>
                </div>
             )}
@@ -228,18 +257,19 @@ export const ListingDetails: React.FC = () => {
                     <span>€15</span>
                   </div>
                   <div className="flex justify-between text-sm text-stone-600">
-                    <span className="underline">Cleaning Fee</span>
-                    <span>€25</span>
+                    <span className="underline">Cleaning Fee (Deposit)</span>
+                    <span className="text-stone-400">€50 (Hold)</span>
                   </div>
                   <div className="border-t border-stone-200 pt-3 flex justify-between font-bold text-stone-900 text-lg">
                     <span>Total</span>
-                    <span>€{(kitchen.pricePerHour * 4) + 40}</span>
+                    <span>€{(kitchen.pricePerHour * 4) + 15}</span>
                   </div>
                 </div>
 
                 <Button type="submit" fullWidth size="lg">
                   Reserve Now
                 </Button>
+                <p className="text-[10px] text-stone-400 text-center px-4">By clicking reserve, you agree to the <Link to="/terms" className="underline">House Rules</Link> and cleanliness requirements.</p>
                 <Button type="button" onClick={handleInquire} variant="outline" fullWidth size="sm">
                   Inquire
                 </Button>
@@ -253,12 +283,6 @@ export const ListingDetails: React.FC = () => {
                    </div>
                 </div>
               </form>
-            </div>
-            
-            <div className="mt-6 p-4 bg-stone-50 rounded-lg border border-stone-200 text-center">
-               <h4 className="font-bold text-stone-900 mb-1">Need monthly access?</h4>
-               <p className="text-sm text-stone-600 mb-3">Save up to 20% with a recurring subscription.</p>
-               <Link to="/pricing" className="text-primary-700 text-sm font-bold hover:underline">View Membership Plans</Link>
             </div>
           </div>
 
